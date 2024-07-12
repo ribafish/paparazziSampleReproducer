@@ -1,0 +1,22 @@
+plugins {
+    id 'com.gradle.develocity' version '3.17.5'
+    id 'com.gradle.common-custom-user-data-gradle-plugin' version '2.0.1'
+}
+
+develocity {
+    def isCI = System.getenv('CI') != null // adjust to your CI provider
+    server = 'https://ge.solutions-team.gradle.com/' // adjust to your Develocity server
+    allowUntrustedServer = false // ensure a trusted certificate is configured
+
+    buildScan {
+        uploadInBackground = !isCI
+    }
+}
+
+
+rootProject.name = 'paparazzi-sample-reproducer'
+
+
+include ':sample'
+
+enableFeaturePreview('TYPESAFE_PROJECT_ACCESSORS')

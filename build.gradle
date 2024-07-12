@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath libs.plugin.kotlin
+        classpath libs.plugin.kotlin.compose
+        classpath libs.plugin.kotlinApiDump
+        classpath libs.plugin.android
+        classpath libs.plugin.mavenPublish
+        classpath libs.plugin.dokka
+        classpath libs.plugin.spotless
+        classpath libs.plugin.buildConfig
+        classpath libs.plugin.poko
+        classpath libs.plugin.paparazzi
+    }
+}
